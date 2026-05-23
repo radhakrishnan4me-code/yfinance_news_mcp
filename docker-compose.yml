@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  yfinance-news-mcp:
+    image: yfinance-news-mcp:latest
+    build: .
+    container_name: yfinance-news-mcp
+    environment:
+      MCP_PORT: "8816"
+      MCP_HOST: "0.0.0.0"
+    ports:
+      - "8816:8816"
+    restart: unless-stopped

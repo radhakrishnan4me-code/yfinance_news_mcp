@@ -1,0 +1,25 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "yfinance-news-mcp"
+version = "0.1.0"
+description = "MCP server exposing Yahoo Finance news for AI and n8n."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "mcp>=1.0.0",
+    "fastapi>=0.100.0",
+    "uvicorn>=0.23.0",
+    "yfinance>=0.2.33",
+    "pydantic>=2.5.0",
+    "pydantic-settings>=2.1.0",
+    "pyyaml>=6.0.1"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "httpx"
+]

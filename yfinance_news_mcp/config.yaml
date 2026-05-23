@@ -1,0 +1,23 @@
+nse_indexes:
+  NIFTY50: "^NSEI"
+  BANKNIFTY: "^NSEBANK"
+  FINNIFTY: "^CNXFIN"
+  MIDCPNIFTY: "^NSEMDCP50"
+  NIFTYIT: "^CNXIT"
+
+mcx_assets:
+  MCX_CRUDEOIL: "CRUDEOIL.NS"  # Using Yahoo Finance mapping for crude oil (could also be CL=F, but matching NS for local context)
+  MCX_NATURALGAS: "NATURALGAS.NS" # Similar mapping
+
+watchlists:
+  nse_top_5:
+    - "RELIANCE.NS"
+    - "TCS.NS"
+    - "HDFCBANK.NS"
+    - "ICICIBANK.NS"
+    - "BHARTIARTL.NS"
+  mcx_all:
+    - "CRUDEOIL.NS"
+    - "NATURALGAS.NS"
+    - "GOLD.NS"
+    - "SILVER.NS"

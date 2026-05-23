@@ -73,7 +73,7 @@ You can easily integrate this server into an **n8n** workflow using the MCP Clie
 1. Add a **Model Context Protocol (MCP)** Client node to your n8n workflow.
 2. Configure the **Connection Details**:
    - **Transport**: `SSE` / `Streamable HTTP`
-   - **URL**: `http://yfinance-news-mcp:8816/sse` (if running in the same Docker network) or `http://<your-vps-ip>:8816/sse`.
+   - **URL**: `http://yfinance-news-mcp:8816/mcp` (if running in the same Docker network) or `http://<your-vps-ip>:8816/mcp`.
 3. Select a tool, for example, `get_mcx_news_snapshot`.
 4. Provide the required JSON arguments.
    - For `get_news_topics_summary`, pass `{"symbol": "^NSEI"}` to get an aggregated view of index topics.

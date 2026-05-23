@@ -1,4 +1,5 @@
 from mcp.server.fastmcp import FastMCP
+from mcp.server.transport_security import TransportSecuritySettings
 
 from yfinance_news_mcp.tools.symbol_news import register_symbol_news
 from yfinance_news_mcp.tools.multi_symbol_news import register_multi_symbol_news
@@ -8,7 +9,10 @@ from yfinance_news_mcp.tools.topics_summary import register_topics_summary
 from yfinance_news_mcp.tools.search_news import register_search_news
 
 def create_server() -> FastMCP:
-    mcp = FastMCP("yfinance-news-mcp")
+    mcp = FastMCP(
+        "yfinance-news-mcp",
+        transport_security=TransportSecuritySettings(enable_dns_rebinding_protection=False)
+    )
     
     register_symbol_news(mcp)
     register_multi_symbol_news(mcp)

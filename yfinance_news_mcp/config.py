@@ -2,7 +2,7 @@ import os
 import yaml
 from pathlib import Path
 from pydantic import BaseModel
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 CONFIG_PATH = Path(__file__).parent / "config.yaml"
 
@@ -29,7 +29,6 @@ class Settings(BaseSettings):
     mcx_assets: dict[str, str] = _config_data.mcx_assets
     watchlists: dict[str, list[str]] = _config_data.watchlists
 
-    class Config:
-        env_prefix = ""
+    model_config = SettingsConfigDict(env_prefix="")
 
 settings = Settings()
